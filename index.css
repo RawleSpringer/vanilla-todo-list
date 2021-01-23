@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* thanks redditindisguise */
+}
+
+/* <a href='https://dryicons.com/free-icons/vanilla-ice-cream'> Icon by Dryicons </a> 
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+*/
+
+body {
+  padding: 40px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #fafafa;
+}
+
+h1 {
+  margin-left: 5px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 24px;
+}
+
+.logo {
+  height: 100%;
+}
+
+.todo-container {
+  display: flex;
+  margin: 0 auto;
+}
+
+.heading {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-container {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.side-bar {
+  width: 25%;
+}
+
+.main {
+  flex: 1;
+}
