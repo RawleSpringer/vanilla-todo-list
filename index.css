@@ -3,7 +3,7 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* thanks redditindisguise */
+  box-sizing: border-box;
 }
 
 /* <a href='https://dryicons.com/free-icons/vanilla-ice-cream'> Icon by Dryicons </a> 
@@ -32,10 +32,6 @@ li {
   margin-bottom: 24px;
 }
 
-.logo {
-  height: 100%;
-}
-
 .todo-container {
   display: flex;
   margin: 0 auto;
@@ -45,6 +41,7 @@ li {
   display: flex;
   height: 60px;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 30px;
 }
 
@@ -54,10 +51,67 @@ li {
   align-items: center;
 }
 
+.logo {
+  height: 100%;
+}
+
+.add {
+  height: 40px;
+}
+
 .side-bar {
   width: 25%;
 }
 
 .main {
   flex: 1;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  height: 100%;
+  min-width: 100%;
+  opacity: 0.5;
+}
+
+.newTodo {
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  height: 300px;
+  width: 600px;
+  margin-top: -150px;
+  margin-left: -300px;
+  z-index: 100;
+  background-color: #fffff4;
+  padding: 20px;
+  padding-top: 5px;
+}
+
+textarea {
+  height: 60%;
+  width: 100%;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.dueDate {
+  display: block;
+}
+
+.exit {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 40px;
+}
+
+.add-todo-button {
+  padding: 10px 15px;
+  margin-top: 10px;
 }

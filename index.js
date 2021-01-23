@@ -1,5 +1,6 @@
 let todos = [
   {
+    id: 1,
     title: "TODO 1",
     status: false,
     dueDate: "1/30/2021",
@@ -7,6 +8,7 @@ let todos = [
     category: "Coding",
   },
   {
+    id: 2,
     title: "TODO 2",
     status: true,
     dueDate: "1/30/2021",
@@ -18,7 +20,7 @@ let todos = [
 //DISPLAY TODOS
 //background-color: #FFFFF4;
 
-const createTodoElement = () => {
+const createTodoElement = (todo) => {
   const $todoContainer = document.createElement("div");
   $todoContainer.style.cssText = `
       background-color: #FFF;
@@ -52,8 +54,8 @@ const createTodoElement = () => {
       font-size: 12px;
       margin-top: 5px;
   `;
-  $todoText.textContent = "Testing To See Something";
-  $todoDueDate.textContent = "1/22/2020";
+  $todoText.textContent = todo.title;
+  $todoDueDate.textContent = todo.dueDate;
 
   $todoTextContainer.append($todoText);
   $todoTextContainer.append($todoDueDate);
@@ -73,8 +75,58 @@ const createTodoElement = () => {
   return $todoContainer;
 };
 
-document.querySelector(".main").append(createTodoElement());
+const $todos = document.querySelector(".main");
+
+todos.forEach((todo) => {
+  let $todoItem = createTodoElement(todo);
+  $todos.append($todoItem);
+});
+
 //ADD TODO
+
+const addTodo = () => {
+  const $todoTitle = document.querySelector("textarea");
+  const $todoDueDate = document.querySelector(".dueDate");
+  const id = todos.length;
+  const title = $todoTitle.value;
+  const status = false;
+  const createDate = new Date().toDateString();
+  const dueDate = $todoDueDate.value;
+
+  const todo = {
+    id,
+    title,
+    status,
+    createDate,
+    dueDate: dueDate,
+  };
+
+  todos.push(todo);
+  const $todoItem = createTodoElement(todo);
+  $todos.append($todoItem);
+};
+const $modal = document.querySelector(".modal");
+const $addTodoIcon = document.querySelector(".add");
+const $newTodo = document.querySelector(".newTodo");
+const $exitTodoIcon = document.querySelector(".exit");
+const $addTodoSubmitButton = document.querySelector(".add-todo-button");
+
+$addTodoIcon.addEventListener("click", () => {
+  $modal.style.display = "block";
+  $newTodo.style.display = "block";
+});
+
+$exitTodoIcon.addEventListener("click", () => {
+  $modal.style.display = "none";
+  $newTodo.style.display = "none";
+});
+
+$addTodoSubmitButton.addEventListener("click", () => {
+  $modal.style.display = "none";
+  $newTodo.style.display = "none";
+
+  addTodo();
+});
 
 //DELETE TODO
 
@@ -89,3 +141,5 @@ document.querySelector(".main").append(createTodoElement());
 //EDIT CATEGORY
 
 //FILTER
+
+//EVENT LISTENERS
